@@ -82,6 +82,7 @@ const exec = async (opts) => {
     globalBin = '',
     globalPath,
     output,
+    chalk,
     // dereference values because we manipulate it later
     packages: [...packages] = [],
     path = '.',
@@ -97,6 +98,7 @@ const exec = async (opts) => {
     flatOptions,
     locationMsg,
     output,
+    chalk,
     path,
     binPaths,
     runPath,

@@ -1,10 +1,10 @@
 const t = require('tap')
+const chalk = require('chalk')
 
 const baseOpts = {
   args: [],
   call: '',
-  color: false,
-  flatOptions: {},
+  chalk: new chalk.Instance({ level: 0 }),
   path: '',
   runPath: '',
   shell: process.platform === 'win32'
@@ -74,7 +74,7 @@ t.test('colorized interactive mode msg', async t => {
       OUTPUT.push(msg)
     },
     runPath: '/foo/',
-    flatOptions: { color: true },
+    chalk: new chalk.Instance({ level: 3 }),
   })
   t.matchSnapshot(OUTPUT.join('\n'), 'should print colorized output')
 })
